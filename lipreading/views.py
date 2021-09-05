@@ -9,5 +9,5 @@ def home_view(request):
     return render(request, "home.html")
 
 def mouth_detect_view(request):
-    mouth_detection.detect_mouth()
-    return None
+    a1 = mouth_detection.detect_mouth()
+    return render(request, "home.html")
