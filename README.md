@@ -1,6 +1,6 @@
 Welcome to the project Unmute the Muted
 
-Authors:
-Meet Shah
-Nishant Dave
+Authors: <br>
+Meet Shah <br>
+Nishant Dave <br>
 Rishabh Nevatia
