@@ -120,17 +120,21 @@ body,
 			Welcome to Unmute the Muted
 		</p>
 	</div>
+    <!-- <form action="/your-name/" method="post">
+        <label for="your_name">Your name: </label>
+        <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+        <input type="submit" value="OK">
+    </form> -->
    <div class="wrapper">
-	<a href="/detect_mouth" class="wave-btn">
-		<span class="wave-btn__text">Detection Module</span>
+	<a href="/correction_module_use" class="wave-btn">
+		<span class="wave-btn__text">Check my text!</span>
 		<span class="wave-btn__waves"></span>
 	</a>
   </div>
-  <div class="wrapper">
-	<a href="/correction_module" class="wave-btn">
-		<span class="wave-btn__text">Correction Module!</span>
-		<span class="wave-btn__waves"></span>
-	</a>
-  </div>
+  {% if final_value %}
+		<div style="color:#fff">
+			<h3>Corrected Text is : {{final_value}}</h3>
+		</div>
+		{% endif %}
 </body>
 </html>

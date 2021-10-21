@@ -20,5 +20,7 @@ from lipreading.views import *
 urlpatterns = [
     path('', home_view, name = 'home'),
     path('detect_mouth', mouth_detect_view, name = 'home'),
+    path('correction_module', correction_module_view, name = 'home'),
+    path('correction_module_use', correction_module_view_use, name = 'home'),
     path('admin/', admin.site.urls),
 ]
