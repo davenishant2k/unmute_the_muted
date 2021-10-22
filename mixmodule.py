@@ -8,8 +8,10 @@ import sys
    
 # Create an object to read 
 # from camera
-def feedback_code():
+def mixmodulecode():
     video = cv2.VideoCapture(0)
+    mouth_cascade = cv2.CascadeClassifier('haarcascade_mcs_mouth.xml')
+    ds_factor = 0.5
     # We need to check if camera
     # is opened previously or not
     if (video.isOpened() == False): 
@@ -31,11 +33,17 @@ def feedback_code():
         
     while(True):
         ret, frame = video.read()
-    
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
         if ret == True: 
     
             # Write the frame into the
             # file 'filename.avi'
+            mouth_rects = mouth_cascade.detectMultiScale(gray, 1.7, 11)
+            for (x,y,w,h) in mouth_rects:
+                y = int(y - 0.15*h)
+                cv2.rectangle(frame, (x,y), (x+w,y+h), (0,255,0), 3)
+                break
             result.write(frame)
     
             # Display the frame

@@ -26,5 +26,7 @@ urlpatterns = [
     path('detect_mouth', mouth_detect_view, name = 'home'),
     path('correction_module', correction_module_view, name = 'home'),
     path('correction_module_use', correction_module_view_use, name = 'home'),
+    path('feedback_module', feedback_module_view, name = 'feedback'),
+    path('mix_module', mix_module_view, name = 'mix'),
     path('admin/', admin.site.urls),
 ]

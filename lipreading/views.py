@@ -1,5 +1,7 @@
 import mouth_detection
 import correction_module_code
+import feedbackmodule
+import mixmodule
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.http import StreamingHttpResponse
@@ -14,6 +16,18 @@ def home_view(request):
     context= {}
     context['user']= request.user
     return render(request, "home.html",context)
+
+def feedback_module_view(request):
+    # context= {}
+    # context['user']= request.user
+    a2 = feedbackmodule.feedback_code()
+    return render(request, "home.html")
+
+def mix_module_view(request):
+    # context= {}
+    # context['user']= request.user
+    a3 = mixmodule.mixmodulecode()
+    return render(request, "home.html")
 
 def mouth_detect_view(request):
     a1 = mouth_detection.detect_mouth()
