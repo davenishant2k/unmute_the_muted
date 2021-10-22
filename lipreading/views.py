@@ -11,14 +11,18 @@ def initial_view(request):
     return render(request, "initial.html")
 
 def home_view(request):
-    return render(request, "home.html")
+    context= {}
+    context['user']= request.user
+    return render(request, "home.html",context)
 
 def mouth_detect_view(request):
     a1 = mouth_detection.detect_mouth()
     return render(request, "home.html")
 
 def correction_module_view(request):
-    return render(request, "correction_module.html")
+    context= {}
+    context['user']= request.user
+    return render(request, "correction_module.html", context)
 
 @csrf_exempt
 def correction_module_view_use(request):

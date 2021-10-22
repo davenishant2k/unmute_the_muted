@@ -143,7 +143,8 @@ body,
 <body>
 	<div class ="header">
 		<p class = "header-text">
-			Welcome to Unmute the Muted
+			Welcome to Unmute the Muted, {{user}}
+
 		</p>
 	</div>
 	<div class = "textBox"><textarea name="ajshdkj" id="corrInput" cols="100" rows="10">Enter your Text</textarea></div>
@@ -159,10 +160,6 @@ body,
 		<span class="wave-btn__waves"></span>
 	</button>
   </div>
-  {% if final_value %}
-		<div style="color:#fff">
-			<h3>Corrected Text is : {{final_value}}</h3>
-		</div>
-		{% endif %}
+
 </body>
 </html>
