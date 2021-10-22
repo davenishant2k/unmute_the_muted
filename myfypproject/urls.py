@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from lipreading.views import *
+from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
-    path('', home_view, name = 'home'),
+    path('', initial_view, name = 'initial'),
+    path('home', home_view, name = 'home'),
+    path('login', auth_views.LoginView.as_view(template_name = 'login.html'), name = 'login'),
     path('detect_mouth', mouth_detect_view, name = 'home'),
     path('correction_module', correction_module_view, name = 'home'),
     path('correction_module_use', correction_module_view_use, name = 'home'),

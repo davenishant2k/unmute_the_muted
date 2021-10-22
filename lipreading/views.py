@@ -7,6 +7,9 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 import json
 # Create your views here.
+def initial_view(request):
+    return render(request, "initial.html")
+
 def home_view(request):
     return render(request, "home.html")
 

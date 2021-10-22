@@ -1,0 +1,245 @@
+<!-- templates/registration/login.html -->
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>LipReading</title>
+   <style>
+       html,
+body,
+.wrapper {
+	background-color: #000;
+	width: 100%;
+	height: 200px;
+}
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.wrapper,
+.wave-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.wave-btn {
+	height: 60px;
+	border-radius: 0 0 10px 10px;
+	transition: all 0.8s ease 0s;
+	text-decoration: none;
+	overflow: hidden;
+}
+
+.wave-btn__text {
+	z-index: 1;
+	font-family: sans-serif;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 8px;
+}
+
+.wave-btn,
+.wave-btn__text {
+	position: relative;
+}
+.wave-btn:hover {
+	border-radius: 10px;
+	transition: all 0.8s ease 0s;
+	box-shadow: 0 0 40px rgba(73, 115, 255, 0.6);
+}
+
+.wave-btn:hover .wave-btn__waves {
+	top: -50px;
+}
+.wave-btn,
+.wave-btn__waves {
+	width: 280px;
+}
+.wave-btn__waves {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 280px;
+	background-color: #4973ff;
+	box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+	transition: all 0.8s ease 0s;
+}
+.wave-btn__waves:after,
+.wave-btn__waves:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 250%;
+	height: 250%;
+	transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+}
+.wave-btn__waves:before {
+	background-color: #000;
+	border-radius: 48%;
+	animation: waves 5s infinite linear;
+}
+.wave-btn__waves:after {
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 44%;
+	animation: waves 10s infinite linear;
+}
+.header {
+	color:white;
+	font-family: sans-serif;
+	position: relative;
+	top: 10rem;
+	font-size: 5rem;
+	text-align: center;
+}
+
+.header-text {
+	text-shadow:  0px 0px 10px #7FFFD4;
+	animation: flicker 3s linear infinite;
+}
+@keyframes flicker {
+	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: .99;
+		
+	}
+	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+		opacity: 0.4;
+	}
+}
+@keyframes waves {
+	0% {
+		transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+	}
+	100% {
+		transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
+	}
+}
+#myForm1 input {
+  float: left;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+  background-color: #def4f0;
+  border-bottom: 2px solid black;
+}
+#myForm1 label{
+  float: left;
+  width: 100%;
+  font-weight: bold;
+  color: black; 
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.login100-form-title {
+  display: block;
+  font-family: Poppins-Bold;
+  font-size: 39px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+}
+#myForm1 {
+    width: 600px;
+}
+#myForm1 li{
+  margin-bottom: 3px;
+}
+
+.login100-form {
+  width: 100%;
+}
+.login100-form-title {
+  display: block;
+  font-family: Poppins-Bold;
+  font-size: 39px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+}
+.container-login100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wrap-login100-form-btn {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 0 auto;
+
+  box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+  -moz-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+  -webkit-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+  -o-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+  -ms-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+}
+
+.login100-form-bgbtn {
+  position: absolute;
+  z-index: -1;
+  width: 300%;
+  height: 100%;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  background: -o-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  background: linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  top: 0;
+  left: -100%;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.login100-form-btn {
+  font-family: Poppins-Medium;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+}
+
+.wrap-login100-form-btn:hover .login100-form-bgbtn {
+  left: 0;
+}
+   </style>
+</head>
+<body>
+	<div class ="header">
+		<p class = "header-text">
+			Welcome to Unmute the Muted
+		</p>
+	</div>
+    <div style="position:relative; top: 170px; left: 400px;"> 
+    <h2 style="color:turquoise">LOG IN</h2>
+    <form id="myForm1" method="POST" class="login100-form validate-form">
+        {% csrf_token %}
+      {{ form.as_p }}
+      <button style="background-color:blueviolet;color:turquoise" type="submit">LOGIN</button>
+    </form>
+</div>
+</body>
+</html>
