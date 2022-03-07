@@ -42,11 +42,11 @@ def mixmodulecode():
     
             # Write the frame into the
             # file 'filename.avi'
-            mouth_rects = mouth_cascade.detectMultiScale(gray, 1.7, 11)
-            for (x,y,w,h) in mouth_rects:
-                y = int(y - 0.15*h)
-                cv2.rectangle(frame, (x,y), (x+w,y+h), (0,255,0), 3)
-                break
+            # mouth_rects = mouth_cascade.detectMultiScale(gray, 1.7, 11)
+            # for (x,y,w,h) in mouth_rects:
+            #     y = int(y - 0.15*h)
+            #     cv2.rectangle(frame, (x,y), (x+w,y+h), (0,255,0), 3)
+            #     break
             result.write(cv2.resize(frame,(160,160),fx=0,fy=0, interpolation = cv2.INTER_CUBIC))
     
             # Display the frame
