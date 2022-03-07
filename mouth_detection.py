@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 def detect_mouth():
-    mouth_cascade = cv2.CascadeClassifier('haarcascade_mcs_mouth.xml')
+    mouth_cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt2.xml')
 
     if mouth_cascade.empty():
         raise IOError('Unable to load the mouth cascade classifier xml file')
