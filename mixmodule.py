@@ -10,6 +10,7 @@ import sys
 # from camera
 def mixmodulecode():
     video = cv2.VideoCapture(0)
+    video.set(cv2.cv.CV_CAP_PROP_FPS, 25)
     mouth_cascade = cv2.CascadeClassifier('haarcascade_mcs_mouth.xml')
     ds_factor = 0.5
     # We need to check if camera
@@ -22,7 +23,7 @@ def mixmodulecode():
     frame_width = int(video.get(3))
     frame_height = int(video.get(4))
     
-    size = (frame_width, frame_height)
+    size = (160, 160)
     
     # Below VideoWriter object will create
     # a frame of above defined The output 
