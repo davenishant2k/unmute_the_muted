@@ -27,6 +27,7 @@ import torch
 import numpy as np
 import cv2 as cv
 import os
+import correction_module_code
 
 from config import args
 from models.video_net import VideoNet
@@ -77,6 +78,8 @@ def main():
 
         #walking through the demo directory and running the model on all video files in it
         for root, dirs, files in os.walk(args["DEMO_DIRECTORY"]):
+            corrected_list = []
+
             for file in files:
                 if file.endswith(".mp4"):
                     sampleFile = os.path.join(root, file[:-4])
@@ -121,10 +124,13 @@ def main():
                     print("File: %s" %(file))
                     print("Prediction: %s" %(pred))
                     print("\n")
-                    return pred
+                    corrected_text = correction_module_code.run_this(pred)[32:]
+                    corrected_list.append(corrected_text)
+
 
 
         print("Demo Completed.\n")
+        return corrected_list
 
 
     else:

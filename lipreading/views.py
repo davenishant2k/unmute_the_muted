@@ -26,9 +26,9 @@ def feedback_module_view(request):
 def mix_module_view(request):
     # context= {}
     # context['user']= request.user
-    a3 = mixmodule.mixmodulecode()
+    corrected_list = mixmodule.mixmodulecode()
     context= {}
-    context['prediction']= a3
+    context['corrected']= corrected_list
     return render(request, "final_output.html", context)
 
 def mouth_detect_view(request):

@@ -16,6 +16,6 @@ def run_this(query_value):
     html_soup = BeautifulSoup(response.text, 'html.parser')
     final_value = html_soup.find(class_= "MUxGbd v0nnCb lyLwlc")
     if final_value is None:
-        return "Your Text is correct!"
+        return "Your Text is correct, which is: "+query_value
     print(type(final_value))
-    return final_value.a.text
+    return "Your Text's corrected output is:"+final_value.a.text

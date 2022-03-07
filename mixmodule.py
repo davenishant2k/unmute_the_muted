@@ -31,7 +31,7 @@ def mixmodulecode():
     # Below VideoWriter object will create
     # a frame of above defined The output 
     # is stored in 'filename.avi' file.
-    result = cv2.VideoWriter('demo/filename.mp4', 
+    result = cv2.VideoWriter('demo/user_video.mp4', 
                             cv2.VideoWriter_fourcc(*'XVID'),
                             25, (160, 160))
         
