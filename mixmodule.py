@@ -10,7 +10,7 @@ import sys
 # from camera
 def mixmodulecode():
     video = cv2.VideoCapture(0)
-    video.set(cv2.cv.CV_CAP_PROP_FPS, 25)
+    # video.set(cv2.CAP_PROP_FPS, 25)
     mouth_cascade = cv2.CascadeClassifier('haarcascade_mcs_mouth.xml')
     ds_factor = 0.5
     # We need to check if camera
@@ -18,19 +18,21 @@ def mixmodulecode():
     if (video.isOpened() == False): 
         print("Error reading video file")
     
+    # video.set(3, 160)
+    # video.set(4, 160)
     # We need to set resolutions.
     # so, convert them from float to integer.
     frame_width = int(video.get(3))
     frame_height = int(video.get(4))
     
-    size = (160, 160)
+    size = (frame_width, frame_height)
     
     # Below VideoWriter object will create
     # a frame of above defined The output 
     # is stored in 'filename.avi' file.
-    result = cv2.VideoWriter('filename.avi', 
-                            cv2.VideoWriter_fourcc(*'MJPG'),
-                            10, size)
+    result = cv2.VideoWriter('filename.mp4', 
+                            cv2.VideoWriter_fourcc(*'XVID'),
+                            25, (160, 160))
         
     while(True):
         ret, frame = video.read()
@@ -45,12 +47,12 @@ def mixmodulecode():
                 y = int(y - 0.15*h)
                 cv2.rectangle(frame, (x,y), (x+w,y+h), (0,255,0), 3)
                 break
-            result.write(frame)
+            result.write(cv2.resize(frame,(160,160),fx=0,fy=0, interpolation = cv2.INTER_CUBIC))
     
             # Display the frame
             # saved in the file
             cv2.imshow('Frame', frame)
-    
+            print(frame.shape)
             # Press S on keyboard 
             # to stop the process
             if cv2.waitKey(1) & 0xFF == ord('s'):
@@ -73,3 +75,4 @@ def mixmodulecode():
     file = open("myfile.txt","w")
     file.write(input("Enter Correct output:\n"))
     file.close()
+mixmodulecode()
