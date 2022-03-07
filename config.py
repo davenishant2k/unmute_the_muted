@@ -9,7 +9,7 @@ args = dict()
 
 
 #project structure
-args["CODE_DIRECTORY"] = "/Users/n_rishabh/Documents/FYP/unmute_the_muted/" #absolute path to the code directory
+args["CODE_DIRECTORY"] = "D:/FYPPP/NEW/LipReadingModule/" #absolute path to the code directory
 args["DATA_DIRECTORY"] = "data"   #absolute path to the data directory
 args["DEMO_DIRECTORY"] = "demo"   #absolute path to the demo directory
 args["PRETRAINED_MODEL_FILE"] = "YOUR_FILE_HERE.pt"     #relative path to the pretrained model file

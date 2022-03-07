@@ -5,6 +5,7 @@
 import cv2
 import os
 import sys  
+import demo
    
 # Create an object to read 
 # from camera
@@ -75,4 +76,6 @@ def mixmodulecode():
     file = open("myfile.txt","w")
     file.write(input("Enter Correct output:\n"))
     file.close()
-mixmodulecode()
+
+    return demo.main()
+# mixmodulecode()

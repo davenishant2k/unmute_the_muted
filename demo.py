@@ -121,6 +121,7 @@ def main():
                     print("File: %s" %(file))
                     print("Prediction: %s" %(pred))
                     print("\n")
+                    return pred
 
 
         print("Demo Completed.\n")
