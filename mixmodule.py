@@ -93,6 +93,6 @@ def mixmodulecode():
     # file = open("myfile.txt","w")
     # file.write(input("Enter Correct output:\n"))
     # file.close()
-    user_type = "indian"
+    user_type = "indian_national"
     return demo.main(user_type)
 # mixmodulecode()

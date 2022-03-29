@@ -35,14 +35,17 @@ from utils.decoders import ctc_greedy_decode, ctc_search_decode
 
 
 
-def main():
+def main(user_type):
 
     np.random.seed(args["SEED"])
     torch.manual_seed(args["SEED"])
     gpuAvailable = torch.cuda.is_available()
     device = torch.device("cuda" if gpuAvailable else "cpu")
     print(device)
-
+    if user_type == "indian_national" :
+        args["TRAINED_MODEL_FILE"] = args["indian_national"]
+    else :
+        args["TRAINED_MODEL_FILE"] = args["foreign_national"]
 
     if args["TRAINED_MODEL_FILE"] is not None:
 
