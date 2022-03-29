@@ -6,10 +6,10 @@ import cv2
 import os
 import sys  
 import demo
-   
+import time
 # Create an object to read 
 # from camera
-def mixmodulecode():
+def mixmodulecode(): 
     video = cv2.VideoCapture(0)
     # video.set(cv2.CAP_PROP_FPS, 25)
     mouth_cascade = cv2.CascadeClassifier('haarcascade_mcs_mouth.xml')
@@ -34,11 +34,12 @@ def mixmodulecode():
     result = cv2.VideoWriter('demo/user_video.mp4', 
                             cv2.VideoWriter_fourcc(*'XVID'),
                             25, (160, 160))
-        
+    record = False
+    count = 0
     while(True):
         ret, frame = video.read()
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
+        k = cv2.waitKey(1)
         if ret == True: 
     
             # Write the frame into the
@@ -48,15 +49,31 @@ def mixmodulecode():
             #     y = int(y - 0.15*h)
             #     cv2.rectangle(frame, (x,y), (x+w,y+h), (0,255,0), 3)
             #     break
-            result.write(cv2.resize(frame,(160,160),fx=0,fy=0, interpolation = cv2.INTER_CUBIC))
+            if k%256 == 32:
+                t = time.localtime()
+                current_time = time.strftime("%H:%M:%S", t)
+                print(current_time)
+                print("Recording started")
+                record = True
+                
+            if record:
+                count+=1
+                print(count)
+                result.write(cv2.resize(frame,(160,160),fx=0,fy=0, interpolation = cv2.INTER_CUBIC))
     
             # Display the frame
             # saved in the file
             cv2.imshow('Frame', frame)
-            print(frame.shape)
+            # print(frame.shape)
             # Press S on keyboard 
             # to stop the process
-            if cv2.waitKey(1) & 0xFF == ord('s'):
+            # if cv2.waitKey(1) & 0xFF == ord('s'):
+            #     break
+            if count == 75 or (cv2.waitKey(1) & 0xFF == ord('s')):
+                t = time.localtime()
+                current_time = time.strftime("%H:%M:%S", t)
+                print(current_time)
+                print("recording ended")
                 break
     
         # Break the loop
@@ -73,9 +90,9 @@ def mixmodulecode():
     cv2.destroyAllWindows()
     
     print("The video was successfully saved")
-    file = open("myfile.txt","w")
-    file.write(input("Enter Correct output:\n"))
-    file.close()
-
-    return demo.main()
+    # file = open("myfile.txt","w")
+    # file.write(input("Enter Correct output:\n"))
+    # file.close()
+    user_type = "indian"
+    return demo.main(user_type)
 # mixmodulecode()

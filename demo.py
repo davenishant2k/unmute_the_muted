@@ -1,8 +1,4 @@
 """
-Author: Smeet Shah
-Copyright (c) 2020 Smeet Shah
-File part of 'deep_avsr' GitHub repository available at -
-https://github.com/lordmartian/deep_avsr
 
 Specifications:
 --------------
@@ -45,6 +41,7 @@ def main():
     torch.manual_seed(args["SEED"])
     gpuAvailable = torch.cuda.is_available()
     device = torch.device("cuda" if gpuAvailable else "cpu")
+    print(device)
 
 
     if args["TRAINED_MODEL_FILE"] is not None:

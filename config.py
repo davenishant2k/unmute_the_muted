@@ -1,19 +1,16 @@
 """
-Author: Smeet Shah
-Copyright (c) 2020 Smeet Shah
-File part of 'deep_avsr' GitHub repository available at -
-https://github.com/lordmartian/deep_avsr
+unmute_the_muted
 """
 
 args = dict()
 
 
 #project structure
-args["CODE_DIRECTORY"] = "D:/FYPPP/NEW/LipReadingModule/" #absolute path to the code directory
+args["CODE_DIRECTORY"] = "C:/FYP/unmute_the_muted/" #absolute path to the code directory
 args["DATA_DIRECTORY"] = "data"   #absolute path to the data directory
 args["DEMO_DIRECTORY"] = "demo"   #absolute path to the demo directory
 args["PRETRAINED_MODEL_FILE"] = "YOUR_FILE_HERE.pt"     #relative path to the pretrained model file
-args["TRAINED_MODEL_FILE"] = "trained_model.pt"   #relative path to the trained model file
+args["TRAINED_MODEL_FILE"] = "train-step_0099-wer_0.011.pt"   #relative path to the trained model file
 args["TRAINED_LM_FILE"] = "language_model.pt"  #absolute path to the trained language model file
 args["TRAINED_FRONTEND_FILE"] = "visual_frontend.pt" #absolute path to the trained visual frontend file
 
