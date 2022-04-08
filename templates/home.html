@@ -1,148 +1,160 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en" >
 <head>
-   <title>LipReading</title>
-   <style>
-       html,
-body,
-.wrapper {
-	background-color: #000;
-	width: 100%;
-	height: 200px;
+  <meta charset="UTF-8">
+  <title>CodePen - Mute / Unmute Button with Material Design Animation</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <style>
+	  .container {
+	background-color: #03A9F4;
+	/* position: fixed; */
+	/* width:100%;
+	height:100%; */
+	left:0;
+	top:0;
 }
-.wrapper {
-	min-height: 100%;
-	overflow: hidden;
-}
-
-.wrapper,
-.wave-btn {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.wave-btn {
-	height: 60px;
-	border-radius: 0 0 10px 10px;
-	transition: all 0.8s ease 0s;
-	text-decoration: none;
-	overflow: hidden;
-}
-
-.wave-btn__text {
-	z-index: 1;
-	font-family: sans-serif;
-	color: #fff;
-	text-transform: uppercase;
-	letter-spacing: 8px;
-}
-.wave-btn,
-.wave-btn__text {
-	position: relative;
-}
-.wave-btn:hover {
-	border-radius: 10px;
-	transition: all 0.8s ease 0s;
-	box-shadow: 0 0 40px rgba(73, 115, 255, 0.6);
-}
-
-.wave-btn:hover .wave-btn__waves {
-	top: -50px;
-}
-.wave-btn,
-.wave-btn__waves {
-	width: 280px;
-}
-.wave-btn__waves {
+.toggle-sound {
+    position: fixed; 
+    top: calc(50% - 25.5px);
+	left: calc(50% - 25.5px);
+	background-color: #EC407A;
 	position: absolute;
-	top: 0;
+	width: 110px;
+	height: 110px;
+    line-height: 110px;
+    text-align: center;
+    color: #fff;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 99;
+	animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+	box-shadow: 0 0 0 0 #F06292;
+}
+.toggle-sound.sound-mute {
+	box-shadow: none;
+}
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+
+.sound {
+	width: 97%;
+	height: 100%;
+	position: absolute;
+	cursor: pointer;
+	display: inline-block;
 	left: 0;
-	height: 280px;
-	background-color: #4973ff;
-	box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
-	transition: all 0.8s ease 0s;
-}
-.wave-btn__waves:after,
-.wave-btn__waves:before {
-	content: "";
-	position: absolute;
 	top: 0;
-	left: 50%;
-	width: 250%;
-	height: 250%;
-	transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+	margin-left: -15%;
 }
-.wave-btn__waves:before {
-	background-color: #000;
-	border-radius: 48%;
-	animation: waves 5s infinite linear;
+.sound--icon {
+	color: inherit;
+	line-height: inherit;
+	font-size: 3.2rem;
+	display: block;
+	margin: auto;
+	text-align: left;
+	padding-left: 40px;
 }
-.wave-btn__waves:after {
-	background-color: rgba(0, 0, 0, 0.5);
-	border-radius: 44%;
-	animation: waves 10s infinite linear;
+.sound--wave {
+	position: absolute;
+	border: 2px solid transparent;
+	border-right: 2px solid #fff;
+	border-radius: 50%;
+	transition: all 200ms;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
-.header {
-	color:white;
-	font-family: sans-serif;
-	position: relative;
-	top: 10rem;
-	font-size: 5rem;
-	text-align: center;
+.sound--wave_one {
+  width: 45%;
+  height: 40%;
 }
+.sound--wave_two {
+  width: 70%;
+  height: 62%;
+}
+.sound--wave_three {
+width: 95%;
+height:75%;
+}
+.sound-mute .sound--wave {
+border-radius: 0;
+width: 35%;
+height: 35%;
+border-width: 0 2px 0 0;
+left: 5px;
+}
+.sound-mute .sound--wave_one {
+  -webkit-transform: rotate(45deg) translate3d(0, -50%, 0);
+          transform: rotate(45deg) translate3d(0, -50%, 0);
+}
+.sound-mute .sound--wave_two {
+  -webkit-transform: rotate(-45deg) translate3d(0, 50%, 0);
+          transform: rotate(-45deg) translate3d(0, 50%, 0);
+}
+.sound-mute .sound--wave_three {
+    opacity: 0;
+    transform: translateX(-46%);
+    height: 20%;
 
-.header-text {
-	text-shadow:  0px 0px 10px #7FFFD4;
-	animation: flicker 3s linear infinite;
 }
-@keyframes flicker {
-	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
-    opacity: .99;
-		
-	}
-	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
-		opacity: 0.4;
-	}
-}
-@keyframes waves {
-	0% {
-		transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
-	}
-	100% {
-		transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
-	}
-}
-   </style>
+  </style>
+
 </head>
 <body>
-	<div class ="header">
-		<p class = "header-text">
-			Welcome to Unmute the Muted, {{user}}
-		</p>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Unmute</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+		  <ul class="navbar-nav">
+			<li class="nav-item active">
+			  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#">Features</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#">Pricing</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link disabled" href="#">Disabled</a>
+			</li>
+		  </ul>
+		</div>
+	  </nav>
+<!-- partial:index.partial.html -->
+<div class="container" >
+<div class="toggle-sound sound-mute"  href="#"id="mute-btn">
+		<div class="tooltip--left sound" data-tooltip="Turn On/Off Sound">
+		  <div class="sound--icon fa fa-volume-off"></div>
+		  <div class="sound--wave sound--wave_one"></div>
+		  <div class="sound--wave sound--wave_two"></div>
+		  <div class="sound--wave sound--wave_three"></div>
+		</div>
 	</div>
-   <div class="wrapper">
-	<a style="margin-top: 150px;" href="/detect_mouth" class="wave-btn">
-		<span class="wave-btn__text">Detection Module</span>
-		<span class="wave-btn__waves"></span>
-	</a>
-  </div>
-  <div class="wrapper">
-	<a href="/correction_module" class="wave-btn">
-		<span class="wave-btn__text">Correction Module</span>
-		<span class="wave-btn__waves"></span>
-	</a>
-  </div>
-  <div class="wrapper">
-	<a href="/feedback_module" class="wave-btn">
-		<span class="wave-btn__text">Feedback Module</span>
-		<span class="wave-btn__waves"></span>
-	</a>
-  </div>
-  <div class="wrapper">
-	<a href="/mix_module" class="wave-btn">
-		<span class="wave-btn__text">Lip Reading Module</span>
-		<span class="wave-btn__waves"></span>
-	</a>
-  </div>
+</div>
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script>
+	  //Mute Toggle		
+	  $("#mute-btn").hover( function(e) {
+				$(this).toggleClass('sound-mute');
+			},);
+// //Mute Toggle		
+// $("#mute-btn").on('click', '.toggle-sound', function(e) {
+// 	$(this).toggleClass('sound-mute');
+// });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
