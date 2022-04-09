@@ -109,7 +109,7 @@ body {
 	color: #7875B5;
 }
 
-.login__input {
+#id_username {
 	border: none;
 	border-bottom: 2px solid #D1D1D4;
 	background: none;
@@ -120,9 +120,27 @@ body {
 	transition: .2s;
 }
 
-.login__input:active,
-.login__input:focus,
-.login__input:hover {
+#id_username:active,
+#id_username:focus,
+#id_username:hover {
+	outline: none;
+	border-bottom-color: #6A679E;
+}
+
+#id_password {
+	border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+	padding: 10px;
+	padding-left: 24px;
+	font-weight: 700;
+	width: 75%;
+	transition: .2s;
+}
+
+#id_password:active,
+#id_password:focus,
+#id_password:hover {
 	outline: none;
 	border-bottom-color: #6A679E;
 }
@@ -198,6 +216,21 @@ body {
                         <i class="button__icon fas fa-chevron-right"></i>
                     </button>				
                 </form>
+				<!-- <form class="login">
+                    <div class="login__field">
+                        <i class="login__icon fas fa-user"></i>
+                        <input type="text" class="login__input" placeholder="User name / Email">
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-lock"></i>
+                        <input type="password" class="login__input" placeholder="Password">
+                    </div>
+                    <button class="button login__submit">
+                        <span class="button__text">Log In Now</span>
+                        <i class="button__icon fas fa-chevron-right"></i>
+                    </button>				
+                </form> -->
+				
                 <div class="social-login">
                     <h3>log in via</h3>
                     <div class="social-icons">
