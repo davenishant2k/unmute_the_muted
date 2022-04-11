@@ -129,6 +129,50 @@ left: 5px;
     height: 20%;
 
 }
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+input[type="checkbox"] {
+	visibility: hidden;
+}
+input[type="checkbox"]:checked + label {
+		transform: rotate(360deg);
+		background-color:#F06292;
+}
+input[type="checkbox"]:checked + label:before {
+			transform: translateX(45px);
+			background-color: #FFF;
+}
+
+label {
+	display: flex;
+	width: 90px;
+	height: 45px;
+	border: 3px solid;
+	border-radius: 49.5em;
+	position: relative;
+	transition: transform .75s ease-in-out;
+	transform-origin: 50% 50%;
+	cursor: pointer;
+	
+}
+label:before {
+		transition: transform .75s ease;
+		transition-delay: .5s;
+		content: "";
+		display: block;
+		position: absolute;
+		width: 27px;
+		height: 27px;
+		background-color: #F06292;
+		border-radius: 50%;
+		top: 6px;
+		left: 6px;
+	}
+#speaker-nationality-toggle {
+	position: relative;
+	top : 1rem;
+}
   </style>
 
 </head>
@@ -150,6 +194,15 @@ left: 5px;
 		  </ul>
 		</div>
 	  </nav>
+	  <center id = "speaker-nationality-toggle">
+			<span>
+			<input type="checkbox" id="toggle" value = "ind"/>
+			<label for="toggle"></label>
+	  		</span>
+			  <br>
+			<h6 id = "speaker-type">Indian</h6>
+		</center>
+	  
 <!-- partial:index.partial.html -->
 <div class="container" >
 	<div onclick="location.href='detect_mouth';" class="toggle-sound2 sound-mute"  href="#"id="mute-btn2">
@@ -165,7 +218,7 @@ left: 5px;
 		</div>
 	</div>
 
-	<div onclick="location.href='mix_module';" class="toggle-sound sound-mute"  href="#"id="mute-btn">
+	<div onclick="mixmodule();" class="toggle-sound sound-mute"  href="#"id="mute-btn">
 			<div class="tooltip--left sound" data-tooltip="Turn On/Off Sound">
 			  <div class="sound--icon fa fa-volume-off"></div>
 			  <div class="sound--wave sound--wave_one"></div>
@@ -190,6 +243,18 @@ left: 5px;
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script>
+	  // Speaker toggle
+	  $("#toggle").click( function(e){
+		if ($('#toggle').is(":checked") == false) {
+                    $('#speaker-type').text('Indian');
+                } else {
+                    $('#speaker-type').text('Foreign');
+                }
+	  });
+	  //
+	  function mixmodule() {
+			window.location.href='mix_module/'+ $('#speaker-type').text();
+	  }
 	  //Mute Toggle		
 	  $("#mute-btn").hover( function(e) {
 				$(this).toggleClass('sound-mute');

@@ -23,13 +23,16 @@ def feedback_module_view(request):
     a2 = feedbackmodule.feedback_code()
     return render(request, "home.html")
 
-def mix_module_view(request):
+def mix_module_view(request,speaker):
     # context= {}
     # context['user']= request.user
-    corrected_list = mixmodule.mixmodulecode()
+    corrected_list = mixmodule.mixmodulecode(speaker)
     context= {}
-    context['corrected']= corrected_list
-    return render(request, "final_output.html", context)
+    # context['corrected']= corrected_list
+    # return render(request, "final_output.html", context)
+    context['output']= corrected_list[0]
+    return render(request, "new_final_output.html", context)
+    
 
 def mouth_detect_view(request):
     a1 = mouth_detection.detect_mouth()
@@ -39,6 +42,11 @@ def correction_module_view(request):
     context= {}
     context['user']= request.user
     return render(request, "correction_module.html", context)
+
+def new_final_output_view(request):
+    context = {}
+    context['output'] = "hello i am under the wauter"
+    return render(request, "new_final_output.html", context)
 
 @csrf_exempt
 def correction_module_view_use(request):

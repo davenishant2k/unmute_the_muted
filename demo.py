@@ -42,10 +42,12 @@ def main(user_type):
     gpuAvailable = torch.cuda.is_available()
     device = torch.device("cuda" if gpuAvailable else "cpu")
     print(device)
-    if user_type == "indian_national" :
+    if user_type == "Indian" :
+        print("using indian model")
         args["TRAINED_MODEL_FILE"] = args["indian_national"]
     else :
         args["TRAINED_MODEL_FILE"] = args["foreign_national"]
+        print("using foreign model")
 
     if args["TRAINED_MODEL_FILE"] is not None:
 

@@ -9,7 +9,7 @@ import demo
 import time
 # Create an object to read 
 # from camera
-def mixmodulecode(): 
+def mixmodulecode(user_type): 
     video = cv2.VideoCapture(0)
     # video.set(cv2.CAP_PROP_FPS, 25)
     mouth_cascade = cv2.CascadeClassifier('haarcascade_mcs_mouth.xml')
@@ -93,6 +93,5 @@ def mixmodulecode():
     # file = open("myfile.txt","w")
     # file.write(input("Enter Correct output:\n"))
     # file.close()
-    user_type = "indian_national"
     return demo.main(user_type)
 # mixmodulecode()
