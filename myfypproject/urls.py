@@ -33,6 +33,7 @@ urlpatterns = [
     path('new_final_output', new_final_output_view, name = 'f_output'),
     path('contact_us', contact_us_view, name = 'contact_us'),
     path('about_us', about_us_view, name = 'about_us'),
+    path('logout/', auth_views.LogoutView.as_view(template_name = 'initial.html'), name = 'logout'),
 
     path('admin/', admin.site.urls),
 ]
