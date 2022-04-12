@@ -24,17 +24,21 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">Unmute</a>
+		<a class="navbar-brand" href="/home">Unmute the Muted</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 		  <ul class="navbar-nav  ml-auto">
 			<li class="nav-item active">
-			  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			  <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
 			</li>
-			<li class="nav-item">
-			  <a class="nav-link" href="#">Feedback</a>
+		
+      <li class="nav-item">
+			  <a class="nav-link" href="/contact_us">Contact Us</a>
+			</li>
+      <li class="nav-item">
+			  <a class="nav-link" href="/about_us">About Us</a>
 			</li>
 			
 		  </ul>
@@ -42,13 +46,13 @@
 	  </nav>
       <div id = "main-container">
         <center>
-            <h4>Did you said? -></h4>
+            <h4>Did you say? -></h4>
             <h1 id = "output">{{output}}</h1>
             <button onClick = "text2speech();" id = "text2speech">
                 <img src="https://cdn-icons-png.flaticon.com/512/6805/6805674.png" alt="" width = 100>
             </button>
             <br>
-            <h4>If you said something else please give us your feedback <a href="/feedback_module">here</a>.</h4>
+            <h4>If you said something else please give us your feedback <b onclick="myFunction1()">here</b>.</h4>
           </center>
       </div>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
@@ -64,6 +68,16 @@
         // speak
         window.speechSynthesis.speak(utter);
     }
+</script>
+<script>
+  function myFunction1(){
+    var x;
+    var corrected_text=prompt("Please enter the correct text output","");
+    if (name!=null){
+      window.location.href="feedback_module/"+corrected_text;
+      alert("Thank you for your Feedback! We'll improvise our model accordingly.");
+   }
+}
 </script>
 </body>
 </html>

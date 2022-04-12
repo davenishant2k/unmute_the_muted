@@ -1,0 +1,257 @@
+{% load static %}
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Unmute the Muted</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<style>
+    * {
+    padding: 0;
+    margin: 0
+}
+
+.container-fluid {
+  background-image: linear-gradient(#fbeced, #adcce9);
+}
+
+#heading,
+#heading0 {
+    color: black;
+}
+
+.card {
+    background-color: #E8EAF6;
+    padding-top: 0px;
+    cursor: pointer
+}
+
+.card-name:hover {
+    color: #424242
+}
+
+#card1 {
+    border-top: 4px solid #3D5AFE !important;
+    transition: 0.5s
+}
+
+#card1:hover {
+    box-shadow: 0 0 2px 2px #3D5AFE;
+    transition: 0.5s
+}
+
+#card2 {
+    border-top: 4px solid #00E676 !important;
+    transition: 0.5s
+}
+
+#card2:hover {
+    box-shadow: 0 0 2px 2px #00E676;
+    transition: 0.5s
+}
+
+#card3 {
+    border-top: 4px solid #AB47BC !important;
+    transition: 0.5s
+}
+
+#card3:hover {
+    box-shadow: 0 0 2px 2px #AB47BC;
+    transition: 0.5s
+}
+
+#card4 {
+    border-top: 4px solid #FBC02D !important;
+    transition: 0.5s
+}
+
+#card4:hover {
+    box-shadow: 0 0 2px 2px #FBC02D;
+    transition: 0.5s
+}
+
+.hex-icon {
+    background-color: black;
+    width: 30%
+}
+
+.fa {
+    color: white;
+    background-color: black;
+    width: 40px;
+    transition: 0.2s
+}
+
+.fa:hover {
+    opacity: 1;
+    transition: 0.2s
+}
+
+.fa-facebook {
+    background-color: #4267B2;
+    opacity: 0.8
+}
+
+.fa-twitter {
+    background-color: #1DA1F2;
+    opacity: 0.8
+}
+
+.fa-linkedin {
+    background-color: #0077B5;
+    opacity: 0.8
+}
+
+.fa-pinterest {
+    background-color: #E60023;
+    opacity: 0.8
+}
+
+svg {
+    height: 200px;
+    width: 240px
+}
+</style>
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="/home">Unmute the Muted</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+		  <ul class="navbar-nav  ml-auto">
+			<li class="nav-item active">
+			  <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+			</li>
+      <li class="nav-item">
+			  <a class="nav-link" href="/contact_us">Contact Us</a>
+			</li>
+      <li class="nav-item">
+			  <a class="nav-link" href="/about_us">About Us</a>
+			</li>
+			
+		  </ul>
+		</div>
+	  </nav>
+    <div class="container-fluid px-5 py-5">
+      <div class="row justify-content-center">
+          <div class="col-12 text-center mb-5">
+              <h1 id="heading" class="mb-0">Our Development Team</h1> <small id="heading0">Final Year Project Group</small>
+          </div>
+      </div>
+      <div class="row justify-content-center">
+          <div class="col-xl-3 col-md-6 col-12 mb-4">
+              <div class="card text-center rounded-0 border-0" id="card1">
+                  <div class="hex-img mt-5 mb-4"> <svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                              <pattern id="img1" patternUnits="userSpaceOnUse" width="100" height="100">
+                                  <image xlink:href="https://cdn.discordapp.com/attachments/876072845669703692/963368075770609694/unknown.png" x="-25" width="150" height="100" />
+                              </pattern>
+                          </defs>
+                          <polygon points="50 1 95 25 95 75 50 99 5 75 5 25" fill="url(#img1)" />
+                      </svg> </div>
+                  <h2 class="card-name">Stevina Correia</h2>
+                  <p class="position">Project Lead</p>
+                  <div class="row mx-5 mb-5 mt-3 justify-content-center">
+                      <div class="col-3 px-0 py-1">
+                          <div class="py-3 fa fa-facebook"></div>
+                      </div>
+                      <div class="col-3 px-0 py-1">
+                          <div class="py-3 fa fa-twitter"></div>
+                      </div>
+                      <div class="col-3 px-0 py-1">
+                          <div class="py-3 fa fa-linkedin"></div>
+                      </div>
+                      
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-12 mb-4">
+              <div class="card text-center rounded-0 border-0" id="card2">
+                  <div class="hex-img mt-5 mb-4"> <svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                              <pattern id="img2" patternUnits="userSpaceOnUse" width="100" height="100">
+                                  <image xlink:href="https://cdn.discordapp.com/attachments/876072845669703692/963363714281644082/1649754184696.jpg" x="-25" width="150" height="100" />
+                              </pattern>
+                          </defs>
+                          <polygon points="50 1 95 25 95 75 50 99 5 75 5 25" fill="url(#img2)" />
+                      </svg> </div>
+                  <h2 class="card-name">Meet Shah</h2>
+                  <p class="position">Developer</p>
+                  <div class="row mx-5 mb-5 mt-3 justify-content-center">
+                      <div class="col-3 px-0 py-1">
+                          <div class="py-3 fa fa-facebook"></div>
+                      </div>
+                      <div class="col-3 px-0 py-1">
+                          <div class="py-3 fa fa-twitter"></div>
+                      </div>
+                      <div class="col-3 px-0 py-1">
+                          <div class="py-3 fa fa-linkedin"></div>
+                      </div>
+                     
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-12 mb-4">
+              <div class="card text-center rounded-0 border-0" id="card3">
+                  <div class="hex-img mt-5 mb-4"> <svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                              <pattern id="img3" patternUnits="userSpaceOnUse" width="100" height="100">
+                                  <image xlink:href="https://cdn.discordapp.com/attachments/876072845669703692/963363902350041158/IMG_20220111_132204_751.jpg" x="-25" width="150" height="100" />
+                              </pattern>
+                          </defs>
+                          <polygon points="50 1 95 25 95 75 50 99 5 75 5 25" fill="url(#img3)" />
+                      </svg> </div>
+                  <h2 class="card-name">Nishant Dave</h2>
+                  <p class="position">Developer</p>
+                  <div class="row mx-5 mb-5 mt-3 justify-content-center">
+                      <div class="col-3 px-0 py-1">
+                          <div class="py-3 fa fa-facebook"></div>
+                      </div>
+                      <div class="col-3 px-0 py-1">
+                          <div class="py-3 fa fa-twitter"></div>
+                      </div>
+                      <div class="col-3 px-0 py-1">
+                          <div class="py-3 fa fa-linkedin"></div>
+                      </div>
+                    
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-12 mb-4">
+              <div class="card text-center rounded-0 border-0" id="card4">
+                  <div class="hex-img mt-5 mb-4"> <svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                              <pattern id="img4" patternUnits="userSpaceOnUse" width="100" height="100">
+                                  <image xlink:href="https://cdn.discordapp.com/attachments/876072845669703692/963362922342531122/Rishabh_Nevatia_PassportPhoto.png" x="-25" width="150" height="100" />
+                              </pattern>
+                          </defs>
+                          <polygon points="50 1 95 25 95 75 50 99 5 75 5 25" fill="url(#img4)" />
+                      </svg> </div>
+                  <h2 class="card-name">Rishabh Nevatia</h2>
+                  <p class="position">Developer</p>
+                  <div class="row mx-5 mb-5 mt-3 justify-content-center">
+                      <div class="col-3 px-0 py-1">
+                          <div class="py-3 fa fa-facebook"></div>
+                      </div>
+                      <div class="col-3 px-0 py-1">
+                          <div class="py-3 fa fa-twitter"></div>
+                      </div>
+                      <div class="col-3 px-0 py-1">
+                          <div class="py-3 fa fa-linkedin"></div>
+                      </div>
+          
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

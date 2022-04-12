@@ -17,10 +17,20 @@ def home_view(request):
     context['user']= request.user
     return render(request, "home.html",context)
 
-def feedback_module_view(request):
+def contact_us_view(request):
+    context= {}
+    context['user']= request.user
+    return render(request, "contact_us.html",context)
+
+def about_us_view(request):
+    context= {}
+    context['user']= request.user
+    return render(request, "about_us.html",context)
+
+def feedback_module_view(request,corrected_text):
     # context= {}
     # context['user']= request.user
-    a2 = feedbackmodule.feedback_code()
+    a2 = feedbackmodule.feedback_code(request.user, corrected_text)
     return render(request, "home.html")
 
 def mix_module_view(request,speaker):

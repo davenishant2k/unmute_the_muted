@@ -28,9 +28,12 @@ urlpatterns = [
     path('detect_mouth', mouth_detect_view, name = 'home'),
     path('correction_module', correction_module_view, name = 'home'),
     path('correction_module_use', correction_module_view_use, name = 'home'),
-    path('feedback_module', feedback_module_view, name = 'feedback'),
+    path('feedback_module/<str:corrected_text>', feedback_module_view, name = 'feedback'),
     path('mix_module/<str:speaker>', mix_module_view, name = 'mix'),
     path('new_final_output', new_final_output_view, name = 'f_output'),
+    path('contact_us', contact_us_view, name = 'contact_us'),
+    path('about_us', about_us_view, name = 'about_us'),
+
     path('admin/', admin.site.urls),
 ]
 urlpatterns+= static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
